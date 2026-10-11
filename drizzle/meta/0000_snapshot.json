@@ -1,0 +1,323 @@
+{
+  "id": "25e910ff-0df3-4a5b-9621-7a60494efd71",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.assessments": {
+      "name": "assessments",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "vehicle_record_id": {
+          "name": "vehicle_record_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "input_snapshot": {
+          "name": "input_snapshot",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "result": {
+          "name": "result",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.import_batches": {
+      "name": "import_batches",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "filename": {
+          "name": "filename",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "row_count": {
+          "name": "row_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "accepted_count": {
+          "name": "accepted_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rejected_count": {
+          "name": "rejected_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duplicate_count": {
+          "name": "duplicate_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "summary": {
+          "name": "summary",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.vehicle_records": {
+      "name": "vehicle_records",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "record_id": {
+          "name": "record_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "registration_year": {
+          "name": "registration_year",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "vehicle_category": {
+          "name": "vehicle_category",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fuel_type": {
+          "name": "fuel_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "emission_standard": {
+          "name": "emission_standard",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "annual_distance_km": {
+          "name": "annual_distance_km",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puc_status": {
+          "name": "puc_status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puc_expiry_date": {
+          "name": "puc_expiry_date",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "historical_puc_failures": {
+          "name": "historical_puc_failures",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fitness_status": {
+          "name": "fitness_status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fitness_expiry_date": {
+          "name": "fitness_expiry_date",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "name": "state",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rto_district": {
+          "name": "rto_district",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "measured_co_percent": {
+          "name": "measured_co_percent",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "measured_hc_ppm": {
+          "name": "measured_hc_ppm",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "measured_smoke_opacity": {
+          "name": "measured_smoke_opacity",
+          "type": "real",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "source_type": {
+          "name": "source_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'synthetic_demo'"
+        },
+        "source_reference": {
+          "name": "source_reference",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "data_quality_score": {
+          "name": "data_quality_score",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "inspection_priority_score": {
+          "name": "inspection_priority_score",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "priority_category": {
+          "name": "priority_category",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contributing_factors": {
+          "name": "contributing_factors",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "missing_fields": {
+          "name": "missing_fields",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "recommended_next_step": {
+          "name": "recommended_next_step",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "recommendation_rationale": {
+          "name": "recommendation_rationale",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "last_updated": {
+          "name": "last_updated",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "import_batch_id": {
+          "name": "import_batch_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "vehicle_records_record_id_unique": {
+          "name": "vehicle_records_record_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "record_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

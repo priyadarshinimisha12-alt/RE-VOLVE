@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf7f2;
+  --color-paper: #ffffff;
+  --color-terracotta: #c7654a;
+  --color-coral: #e88d78;
+  --color-charcoal: #34302e;
+  --color-sand: #e9dfd2;
+  --color-rose: #d9a6a0;
+  --color-mist: #8b8580;
+  --color-ink: #2a2624;
+  --color-alert: #b5442e;
+  --color-amber: #c48a3a;
+  --color-rule: rgba(52, 48, 46, 0.12);
+  --font-sans: var(--font-figtree), "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), "Fraunces", ui-serif, Georgia, serif;
+}
+
+html,
+body {
+  background: #faf7f2;
+  color: #34302e;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(1200px 500px at 10% -10%, rgba(199, 101, 74, 0.05), transparent 50%),
+    radial-gradient(900px 400px at 100% 0%, rgba(217, 166, 160, 0.08), transparent 45%);
+}
+
+::selection {
+  background: #e88d78;
+  color: #34302e;
+}
+
+:focus-visible {
+  outline: 2px solid #c7654a;
+  outline-offset: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.hairline {
+  border-color: var(--color-rule);
+}
+
+.revolve-card {
+  background: #ffffff;
+  border: 1px solid rgba(52, 48, 46, 0.1);
+  box-shadow: 0 1px 0 rgba(52, 48, 46, 0.04);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+input,
+select,
+textarea {
+  background: #ffffff;
+  color: #34302e;
+}
+
+a {
+  color: inherit;
+}
+
+.recharts-cartesian-axis-tick-value,
+.recharts-legend-item-text {
+  fill: #8b8580;
+}
